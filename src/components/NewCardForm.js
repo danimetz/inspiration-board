@@ -42,24 +42,26 @@ class NewCardForm extends Component {
 
   render() {
     const getEmojis = EMOJI_LIST.map((emojiText) => {
-        return <option value={emojiText}> {emoji.getUnicode(`${emojiText}`)}</option>
+        return <option value={emojiText}> {emoji.getUnicode(emojiText)}</option>
       })
     return (
       <form onSubmit={this.onSubmit} className="new-card-form">
-        <div className="new-card-form__header">
-          Add More Inspiration
-        </div>
-        <div>
-          <label className="new-card-form__form-label" htmlFor="text">Text</label>
-          <input className="new-card-form__form-textarea" name="text" placeholder="Write something inspirational here!" onChange={this.onFormChange} value={this.state.text} />
-        </div>
-        <div>
-          <label className="new-card-form__form-label" htmlFor="emoji">Emoji</label>
-          <select className="new-card-form__form-select" name="emoji" value={this.state.emoji} onChange={this.onFormChange} >
-            {getEmojis}
-          </select>
-        </div>
-        <input className="new-card-form__form-button" type="submit" name="submit" value="Inspire!" />
+        <section className="card__content">
+          <header className="new-card-form__header">
+            Add more inspiration
+          </header>
+          <div>
+            <label className="new-card-form__form-label" htmlFor="text">Text</label>
+            <textarea className="new-card-form__form-textarea" name="text" placeholder="Write something inspirational here!" onChange={this.onFormChange} value={this.state.text}></textarea>
+          </div>
+          <div>
+            <label className="new-card-form__form-label" htmlFor="emoji">Emoji</label>
+            <select className="new-card-form__form-select" name="emoji" value={this.state.emoji} onChange={this.onFormChange} >
+              {getEmojis}
+            </select>
+          </div>
+          <input className="new-card-form__form-button" type="submit" name="submit" value="Inspire!" />
+        </section>
       </form>
     )
   }

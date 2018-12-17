@@ -14,10 +14,10 @@ import './Card.css';
         <button
           type="button"
           className="card__delete"
-          aria-label="x"
+          aria-label="delete card"
           onClick={() => {props.deleteCardCallback(props.id)}}
         >
-          Remove
+          x
         </button>
       </div>
     )
