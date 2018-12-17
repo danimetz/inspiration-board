@@ -4,15 +4,6 @@ import emoji from 'emoji-dictionary';
 
 import './Card.css';
 
-// class Card extends Component {
-//   // constructor(props) {
-//   //   super(props);
-//   //
-//   //   this.state = {
-//   //     text: "",
-//   //     emoji: "",
-//   //   };
-//   // }
   const Card  = (props) => {
     return (
       <div className="card">
@@ -23,7 +14,7 @@ import './Card.css';
         <button
           type="button"
           className="card__delete"
-          aria-label="Close"
+          aria-label="x"
           onClick={() => {props.deleteCardCallback(props.id)}}
         >
           Remove
